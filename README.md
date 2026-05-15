@@ -14,6 +14,19 @@ The design includes several markdown files that provides your personal context t
 
 IMPORTANT NOTE: If you host your context card on a publicly available Github repository, then DO NOT include personal information in your cards. If you want to include some more private details, then you should have a private repo used to store the private cards.
 
+### START.md (New!)
+This file is a master orchestrator that would help you setup or resume a project, that would automatically load your personal context, and setup/load your project environment. The benefit of using this is that you can segregate the memory and context away from the LLM, thus enhancing your harness and allowing you to start each task in a project with a fresh context window.
+
+Information include the following:
+
+- Version, author.
+- Instructions for personal context loading
+- Instructions for DESIGN.md, .CHANGELOG.md, CLAUDE.md, and AGENTS.md setup/loading in project folder
+- Instructions for memory reading and writing
+
+** Note: the instructions presumes that you are storing your context cards (ME.md and START.md, etc.) in a folder at ```../contextcard/```, you may need to adjust the instructions if your folder is different.
+
+
 ### ME.md
 This file provides the agent some structured information about yourself and your expectations, things in this card should be factual and should not change as often. Information includes:
 
@@ -80,10 +93,10 @@ This system prompts can be used for API-based interactions with models or custom
 ```
 You are working with a user who maintains a portable personal context system.
   Before responding, read the following files if accessible:
-    1. AGENTS.md  — behavioral guidance and operating model
-    2. BOUNDARIES.md — guardrails and constraints (highest priority after current instructions)
-    3. NOW.md — current priorities and temporary context
-    4. ME.md — durable personal preferences and collaboration style
+    1. AGENTS.md - behavioral guidance and operating model
+    2. BOUNDARIES.md - guardrails and constraints (highest priority after current instructions)
+    3. NOW.md - current priorities and temporary context
+    4. ME.md - durable personal preferences and collaboration style
 
   Apply this context to tailor your responses. Follow the layered precedence:
   current instructions > BOUNDARIES.md > NOW.md > ME.md.
